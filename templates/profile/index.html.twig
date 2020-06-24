@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+<div class="profile-container">
+    <div class="profile-orders">
+        <h2>My orders</h2>
+        <div class="order-list">
+            {% for order in pagination %}
+            <div class="order-list-item">
+                <p class="order-card-title" href="">Order #{{ order.id }}</p>
+                <p class="order-card-text">{{ order.orderDate|date('h:m d/m/yy') }}</p>
+                <p class="order-card-text">€{{ order.price }}</p>
+                <p class="order-card-text">{{ order.orderStatus }}</p>
+                <a class="order-card-button" href="{{ path('order_detail', {orderId: order.id}) }}">Details</a>
+            </div>
+            {% endfor %}
+    </div>
+    {{ knp_pagination_render(pagination) }}
+</div>
+
+{% endblock %}

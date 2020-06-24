@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block content %}
+
+<div class="cart-container">
+
+{% if items | length > 0 %}
+<ul class="shopping-cart">
+  <li class="sp-product-row">
+      <div class="sp-product-details">
+          
+          <h3 class="sp-product-title">Shopping cart</h3>          
+        </div>
+        <div class="sp-product-manage">
+          <span id="price" readonly class="sp-product-price" >Price</span> 
+          <span id="quantity" class="sp-product-quantity">Quantity</span>
+          <span id="total" class="sp-product-total-price">Subtotal</span>
+          </span>
+          <span class="sp-remove-product"><a href="{{ path('empty_cart') }}"><i class="fa fa-trash"></i></a></span>
+      </div>
+    </li>
+
+    {% for item in items %}
+    <li class="sp-product-row">
+      <div class="sp-product-image">
+                <img src="{{ item.product.imageUrl }}">
+        </div>
+        
+
+        <div class="sp-product-details">
+          
+          <h3 class="sp-product-title">{{ item.product.name }}</h3>
+          <div class="sp-product-description">
+            {{ item.product.description }}
+          </div>
+        </div>
+        <div class="sp-product-manage" oninput="total2.value=parseInt(price2.value)*parseInt(quantity2.value)">
+            <div>
+                <p>{{ item.product.price }} x</p>
+            </div> 
+            <div>
+                <a href="{{ path('cart_remove', {'id': item.product.id }) }}"><i style="margin-right:5px" class="fa fa-minus-square"></i></a>{{ item.quantity}}<a href="{{ path('cart_add', {'id': item.product.id}) }}"><i class="fa fa-plus-square" style="margin-left:5px"></i></a>
+            </div>
+            <div>
+                €{{ item.product.price * item.quantity }}
+            </div>
+      </div>
+    </li>
+
+    {% endfor %}
+</ul>
+  <a href="{{ path('checkout') }}" id="cart-button">Checkout</a>
+
+{% else %}
+<p>Your cart is empty</p>
+    {% endif %}
+</div>
+{% endblock %}

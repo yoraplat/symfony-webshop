@@ -1,0 +1,14 @@
+{% block navigation %}
+<div class="navigation">
+    <a class="navigation-item" href="{{ path('homepage') }}">Home</a>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <a class="navigation-item" href="{{ path('cart') }}">My cart <i class="fa fa-shopping-cart"></i><span class="cart-amount">{{ cart.getTotalQuantity }}</span></a>
+    <a class="navigation-item" href="{{ path('profile') }}">Profile <i class="fa fa-user"></i></a>
+    
+    <a class="navigation-item" href="{{ path('app_logout') }}"><i class="fa fa-sign-out"></i></a>
+    {# <a class="navigation-item" href="{{ path('app_logout') }}">Logout <i style="margin-left:5px" class="fa fa-sign-out"></i></a> #}
+    {% else %}
+    <a class="navigation-item" href="{{ path('app_login') }}">Login <i class="fa fa-sign-in"></i></a>
+    {% endif %}
+</div>
+{% endblock %}

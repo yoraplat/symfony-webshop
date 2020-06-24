@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="order-detail">
+<h3>Order information</h3>
+  <div class="order-info">
+    <p><span class="small-title">Shipping address:</span> {{order[0].foundOrder.shippingAddress}}</p>
+    <p><span class="small-title">Billing address:</span> {{order[0].foundOrder.orderAddress}}</p>
+    <p><span class="small-title">Order date:</span> {{order[0].foundOrder.orderDate|date('h:m d/m/yy')}}</p>
+    <p><span class="small-title">Status:</span> {{order[0].foundOrder.orderStatus}}</p>
+  </div>
+
+
+  <h3>Ordered products</h3>
+  <div class="order-detail-orders">
+    {% for orderDetail in order %}
+    <div class="orderDetails">
+      <img src="{{ orderDetail.product.imageUrl }}">
+      <div class="title">{{ orderDetail.product.name }}</div>
+      <div>price: €{{ orderDetail.price }}</div>
+      <div>Quantity: {{ orderDetail.quantity }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

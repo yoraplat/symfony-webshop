@@ -1,0 +1,88 @@
+.login-container {
+    margin-top: 50px;
+    width: calc(100% - 10px);
+    margin-left: 5px;
+    background-image: url('https://files.123freevectors.com/wp-content/original/131391-light-blue-polygon-pattern-abstract-background.jpg');
+    background-size: cover;
+    // background-color: $color1;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .login-card {
+        max-width: 70%;
+        padding: 0 5%;
+        padding-bottom: 2%;
+        background-color: $color2;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        box-shadow: -8px 8px 11px 0px black;
+
+        form {
+            width: 100%;
+
+            .form-title {
+                text-align: center;
+                color: $color5;
+                font-family: $roboto;
+            }
+
+            .form-item {
+                // background-color: blue;
+
+                .redirect {
+                    font-size: 0.8em;
+
+                    a {
+                        color: $color3;
+                    }
+                }
+
+                label {
+                    width: 100%;
+                    display: block;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+                }
+
+                input {
+                    width: calc(100% - 12px);
+                    background-color: #F0F0F0;
+                    font-size: 1.1em;
+                    padding: 8px 6px;
+                    border: 1px solid $color3;
+                    border-radius: 5px;
+                }
+
+                button {
+                    margin: 0 auto;
+                    display: block;
+                    width: 100%;
+                    margin-top: 30px;
+                    background-color: $color3;
+                    color: $color2;
+                    border: none;
+                    font-size: 1.2em;
+                    padding: 8px 50px;
+                }
+            }
+
+            .form-terms {
+
+                margin: 20px 0;
+
+                label,
+                input {
+                    display: inline-block;
+                    width: auto;
+                }
+
+                input {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

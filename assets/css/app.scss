@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/bootstrap";
+// Declare variables
+@import 'variables.scss';
+
+body {
+    font-family: $open-sans;
+    background-color: $color2;
+}
+@import 'pages/_orderPage.scss';
+@import 'pages/_loginPage.scss';
+@import 'pages/_cartPage.scss';
+@import 'pages/_profilePage.scss';
+@import 'pages/_homepage.scss';
+@import 'page_parts/_navigation.scss';

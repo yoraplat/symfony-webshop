@@ -1,0 +1,25 @@
+.navigation {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    width: 100%;
+    .navigation-item {
+        flex-grow: 1;
+        padding: 8px 12px;
+        margin: 0 5px;
+        background-color: $color3;
+        text-align: center;
+        text-decoration: none;
+        color: $color2;
+        font-size: 1.5em;
+
+        .cart-amount {
+            margin-top: -6px;
+            margin-left: 2px;
+            font-weight: 600;
+            position: absolute;
+            font-size: 0.7em;
+            // color: red;
+        }
+    }
+}

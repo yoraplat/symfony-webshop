@@ -1,0 +1,46 @@
+.order-detail {
+    .title {
+        font-weight: 700;
+    }
+    .small-title {
+        font-weight: 600;
+    }
+    margin: 0 auto;
+    margin-top: 20px;
+    width: calc(100% - 10px);
+    margin-left: 5px;
+
+    .order-info {
+        padding-left: 10px;
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+
+    .order-detail-orders {
+        display: flex;
+        justify-content: start;
+        
+        .orderDetails {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            background-color: $color6;
+            margin-right: 10px;
+
+            &:last-child{ 
+                margin-right: 0px;
+            }
+
+            
+            div {
+                max-width: 200px;
+                color: $color4;
+            }
+
+            img {
+                width: 100px;
+                min-width: 50px;
+            }
+        }
+    }
+}

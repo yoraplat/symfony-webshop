@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+<div class="featured-banner">
+    <img class="feature-image" src='http://moonstoneshoes.com/saudi/images/banner.jpg'>
+</div>
+
+<div class="product-list">
+    {% for product in products %}
+    <div class="product-list-item">
+    <img class="item-image" src={{product.imageUrl}}>
+        <div class="item-content">
+            <h3 class="title">{{ product.name }}</h3>
+            {# <p class="description">{{ product.description }}</p> #}
+            <p class="price">€{{ product.price }}</p>
+            <div class="list-item-actions">
+                <a href="">Details</a>
+                <a href="{{ path('cart_add', {'id': product.id}) }}">Add To Cart<i style="padding-left:8px" class="fa fa-plus-square"></i></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
